@@ -1,0 +1,10 @@
+server:
+  port: 8888
+spring:
+    cloud:
+        function:
+            definition: consumer
+        stream:
+            bindings:
+                consumer-in-0:
+                    destination: test
