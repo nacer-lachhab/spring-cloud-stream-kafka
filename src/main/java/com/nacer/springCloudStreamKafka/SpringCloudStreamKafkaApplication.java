@@ -13,6 +13,6 @@ public class SpringCloudStreamKafkaApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Bismillah......");
+        System.out.println("***stated with success......");
     }
 }
