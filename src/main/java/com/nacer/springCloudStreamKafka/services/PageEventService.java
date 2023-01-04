@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.Random;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 @Service
@@ -29,5 +30,15 @@ public class PageEventService {
                 Math.random()>0.5?"u1":"u2",
                 new Date(),
                 new Random().nextInt(500));
+    }
+
+    //Function<input,output>
+    @Bean
+    public Function<PageEvent,PageEvent> pageEventFunction(){
+        return (input)->{
+            input.setName("catched & edited");
+            input.setUser("PageEvent-Function");
+            return input;
+        };
     }
 }

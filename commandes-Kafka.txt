@@ -1,0 +1,19 @@
+depuis votre dossier:
+	\kafka\bin\windows
+
+*commande pour demarer zookeper:
+	zookeeper-server-start.bat ../../config/zookeeper.properties
+
+*commande pour lancer kafka server:
+	kafka-server-start.bat ../../config/server.properties
+
+*commande pour creer un topic:
+	kafka-topics.bat --create --bootstrap-server localhost:9092 --topic test2
+
+* commande producer: 
+	kafka-console-producer --topic test --bootstrap-server localhost:9092
+	kafka-console-producer --broker-list localhost:9092 --topic test
+
+* commande consummer:
+	kafka-console-consumer --bootstrap-server localhost:9092 -topic test2 --from-beginning
+	kafka-console-consumer --bootstrap-server localhost:9092 -topic test2
