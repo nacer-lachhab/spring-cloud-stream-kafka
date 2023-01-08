@@ -62,6 +62,7 @@ public class PageEventService {
                   .windowedBy(TimeWindows.of(Duration.ofMillis(5000)))
                   .count(Materialized.as("page-count"))
                   //count : fait le compte de combien de fois la page k(p1/p2) est visité
+                  //"page-count": store de type windowStore
                   .toStream()
                   //convertir kTable to KStream
                   //value = count, on fait convertion de key to string
