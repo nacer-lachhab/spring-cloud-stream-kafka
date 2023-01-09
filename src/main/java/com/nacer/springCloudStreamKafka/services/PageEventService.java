@@ -59,7 +59,7 @@ public class PageEventService {
                   .groupBy((k,v)->k,Grouped.with(Serdes.String(),Serdes.Long()))
                   //Serdes = serializer/deserializer
                   //enregistrement des dernieres 5s, fenetre temporelle
-                  .windowedBy(TimeWindows.of(Duration.ofMillis(5000)))
+                  .windowedBy(TimeWindows.ofSizeWithNoGrace(Duration.ofMillis(5000)))
                   .count(Materialized.as("page-count"))
                   //count : fait le compte de combien de fois la page k(p1/p2) est visité
                   //"page-count": store de type windowStore
